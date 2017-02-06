@@ -35,7 +35,9 @@ class RoarController extends ControllerBase
     public function roar($count)
     {
         $roar = $this->roarService->getRoar($count);
-        return new Response($roar);
+        return [
+          '#title' => $roar
+        ];
     }
 
     public function node($node) {
