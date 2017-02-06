@@ -4,3 +4,10 @@ dino_says:
     _controller: Drupal\dino_roar\Controller\RoarController::roar
   requirements:
     _permission: 'access content'
+
+dino_node:
+  path: /get/node/{node}
+  defaults:
+    _controller: Drupal\dino_roar\Controller\RoarController::node
+  requirements:
+    _permission: 'access content'

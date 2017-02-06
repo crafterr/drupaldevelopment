@@ -1,0 +1,15 @@
+parameters:
+  dino.roar.use_key_value_cache: true
+  dino.roar.myparam: 'hej adam'
+services:
+  dino_roar.roar_service:
+    class: Drupal\dino_roar\Service\RoarService
+    arguments:
+      - '@keyvalue'
+      - '@current_user'
+      - %dino.roar.use_key_value_cache%
+  dino_roar.roar_simpleservice:
+    class: Drupal\dino_roar\Service\SimpleService
+    arguments:
+      - '@entity.query'
+      - %dino.roar.myparam%
